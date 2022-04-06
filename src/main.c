@@ -72,6 +72,7 @@ int	main(int argc, char **argv)
 
 	init_vars(&vars);
 	input_rows(argc, argv, &vars);
+	// game_starter(&vars, 15, 38);
 	print_str_arr(vars.input);
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 1024,
