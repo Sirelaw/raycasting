@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 23:05:09 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 23:14:20 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_vars
 	double	orient;
 	char	*addr;
 	int		bits_per_pixel;
-	int		line_lenght;
+	int		line_length;
 	int		endian;
 	char	**input;
 	int		enemy;
@@ -108,5 +108,11 @@ void	my_killer(t_vars *game);
 void	input_rows(int argc, char **argv, t_vars *vars);
 int		check_valid(char **input, t_vars *vars);
 void	ft_error(void);
+
+// ------ ray --------
+void	look_around(int key, t_vars *g);
+void	plotLine(int x0, int y0, int x1, int y1, t_vars *game);
+void	my_mlx_pixel_put(t_vars *game, int x, int y, int color);
+void	render_smallmap(t_vars *g);
 
 #endif
