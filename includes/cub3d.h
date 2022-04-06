@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttokesi <ttokesi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 17:42:20 by ttokesi          ###   ########.fr       */
+/*   Updated: 2022/04/06 18:07:31 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_vars
 	int		player[2];
 	char	**input;
 	int		enemy;
+	int		map_size[2];
 	int		collect;
 	int		check;
 	int		fi_x;
@@ -76,7 +77,6 @@ typedef struct s_vars
 	int		wi_x;
 	int		he_y;
 	int 	sizer;
-	// char	start_orientation;
 }				t_vars;
 
 //utils

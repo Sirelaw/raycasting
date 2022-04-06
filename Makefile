@@ -6,7 +6,7 @@
 #    By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 20:23:06 by oipadeol          #+#    #+#              #
-#    Updated: 2022/04/06 17:51:00 by oipadeol         ###   ########.fr        #
+#    Updated: 2022/04/06 18:00:30 by oipadeol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,14 +53,14 @@ obj:
 	@mkdir -p $(OBJ_DIR)utils
 	@mkdir -p $(OBJ_DIR)game_logic
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC_DIR)/*.h
 	@gcc $(FLAGS) -I $(LIBFT_DIR) -I $(INC_DIR) -o $@ -c $<
 	@echo "$(BLUE)updated $@$(RESET)"
 
 $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ) $(INC_DIR)/*.h
+$(NAME): $(OBJ)
 	@echo "$(YELLOW)\n      -> Building $(NAME) ...$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "$(BLUE)......linking updated .o"
