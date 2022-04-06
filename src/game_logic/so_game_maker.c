@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:54:13 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/06 20:53:20 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 22:32:44 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static void	set_startvalues(t_vars *game, int lines, int rows)
 
 void	game_starter(t_vars *game, int lines, int rows)
 {
-
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, 20 * 65, 15 * 65,
 			"42 cube3D");

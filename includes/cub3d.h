@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 21:58:33 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 23:05:09 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ enum e_images
 	WIN = 18
 };
 
+enum	e_keys
+{
+	A_KEY = 0,
+	S_KEY = 1,
+	D_KEY = 2,
+	W_KEY = 13,
+	LEFT_KEY = 123,
+	RIGHT_KEY = 124	
+};
+
 // -----game-------
 typedef struct s_img
 {
@@ -51,6 +61,7 @@ typedef struct s_vars
 	char	**map;
 	void	*img;
 	char	start_orientation;
+	double	orient;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_lenght;
@@ -64,6 +75,8 @@ typedef struct s_vars
 	int		fi_y;
 	int		player_x;
 	int		player_y;
+	int		player_dx;
+	int		player_dy;
 	int		bh_x;
 	int		bh_y;
 	int		b2_x;
