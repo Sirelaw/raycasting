@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 18:07:31 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:46:43 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,13 @@
 enum e_images
 {
 	FIG1 = 0,
+	NONE = 1,
 	FLOOR = 4,
 	BH1 = 5,
 	WALL = 9,
 	GOVER = 17,
 	WIN = 18
 };
-
-// ----input ----
-// typedef struct s_vars
-// {
-// 	void	*mlx;
-// 	void	*win;
-// 	void	*img;
-// }	t_vars;
 
 // -----game-------
 typedef struct s_img
@@ -62,14 +55,13 @@ typedef struct s_vars
 	int		bits_per_pixel;
 	int		line_lenght;
 	int		endian;
-	int		player[2];
 	char	**input;
 	int		enemy;
 	int		map_size[2];
 	int		collect;
 	int		check;
-	int		fi_x;
-	int		fi_y;
+	int		player_x;
+	int		player_y;
 	int		bh_x;
 	int		bh_y;
 	int		b2_x;

@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:50:50 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/06 18:56:09 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:45:57 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ static int	move_up_down(t_vars *g, int key, int r)
 
 	if (key == 126 || key == 13)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->im[FLOOR].l, g->fi_x, g->fi_y);
-		if (g->fi_y > 6 && st_p(g, g->fi_x, g->fi_y - 6))
-			g->fi_y -= 6;
-		mlx_put_image_to_window(g->mlx, g->win, g->im[r].l, g->fi_x, g->fi_y);
+		mlx_put_image_to_window(g->mlx, g->win, g->im[FLOOR].l, g->player_x, g->player_y);
+		if (g->player_y > 6 && st_p(g, g->player_x, g->player_y - 6))
+			g->player_y -= 6;
+		mlx_put_image_to_window(g->mlx, g->win, g->im[r].l, g->player_x, g->player_y);
 	}
 	if (key == 125 || key == 1)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->im[FLOOR].l, g->fi_x, g->fi_y);
-		if (g->fi_y < (g->he_y * 6) - 12 && st_p(g, g->fi_x, g->fi_y + 6))
-			g->fi_y += 6;
-		mlx_put_image_to_window(g->mlx, g->win, g->im[FIG1].l, g->fi_x, g->fi_y);
+		mlx_put_image_to_window(g->mlx, g->win, g->im[FLOOR].l, g->player_x, g->player_y);
+		if (g->player_y < (g->he_y * 6) - 12 && st_p(g, g->player_x, g->player_y + 6))
+			g->player_y += 6;
+		mlx_put_image_to_window(g->mlx, g->win, g->im[FIG1].l, g->player_x, g->player_y);
 	}
 	return (0);
 }
@@ -54,17 +54,17 @@ static int	move_right_left(t_vars *g, int key, int r)
 {
 	if (key == 124 || key == 2)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->im[4].l, g->fi_x, g->fi_y);
-		if (g->fi_x < (g->wi_x * 6 ) - 12 && st_p(g, g->fi_x + 6, g->fi_y))
-			g->fi_x += 6;
-		mlx_put_image_to_window(g->mlx, g->win, g->im[r].l, g->fi_x, g->fi_y);
+		mlx_put_image_to_window(g->mlx, g->win, g->im[4].l, g->player_x, g->player_y);
+		if (g->player_x < (g->wi_x * 6 ) - 12 && st_p(g, g->player_x + 6, g->player_y))
+			g->player_x += 6;
+		mlx_put_image_to_window(g->mlx, g->win, g->im[r].l, g->player_x, g->player_y);
 	}
 	if (key == 123 || key == 0)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->im[4].l, g->fi_x, g->fi_y);
-		if (g->fi_x > 6 && st_p(g, g->fi_x - 6, g->fi_y))
-			g->fi_x -= 6;
-		mlx_put_image_to_window(g->mlx, g->win, g->im[r].l, g->fi_x, g->fi_y);
+		mlx_put_image_to_window(g->mlx, g->win, g->im[4].l, g->player_x, g->player_y);
+		if (g->player_x > 6 && st_p(g, g->player_x - 6, g->player_y))
+			g->player_x -= 6;
+		mlx_put_image_to_window(g->mlx, g->win, g->im[r].l, g->player_x, g->player_y);
 	}
 	return (0);
 }

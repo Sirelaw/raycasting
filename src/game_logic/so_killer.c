@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_killer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttokesi <ttokesi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:52:47 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/06 13:53:06 by ttokesi          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:45:57 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	my_killer(t_vars *g)
 {
-	if (((g->bh_x == g->fi_x && g->bh_y == g->fi_y)
-	|| (g->b2_x == g->fi_x && g->b2_y == g->fi_y)) && g->collect != -1)
+	if (((g->bh_x == g->player_x && g->bh_y == g->player_y)
+	|| (g->b2_x == g->player_x && g->b2_y == g->player_y)) && g->collect != -1)
 	{
 		g->collect = -2;
 		mlx_put_image_to_window(g->mlx, g->win, g->im[GOVER].l,

@@ -16,8 +16,8 @@ void	init_vars(t_vars *vars)
 {
 	vars->input	= NULL;
 	vars->start_orientation = 0;
-	vars->player[0] = 0;
-	vars->player[1] = 0;
+	vars->player_x = 0;
+	vars->player_y = 0;
 	vars->map_size[0] = 1024;
 	vars->map_size[1] = 550;
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 
 	init_vars(&vars);
 	input_rows(argc, argv, &vars);
-	// game_starter(&vars, 15, 38);
+	game_starter(&vars, 23, 48);
 	print_str_arr(vars.input);
 	return (0);
 }

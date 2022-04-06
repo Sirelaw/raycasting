@@ -6,7 +6,7 @@
 #    By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 20:23:06 by oipadeol          #+#    #+#              #
-#    Updated: 2022/04/06 18:00:30 by oipadeol         ###   ########.fr        #
+#    Updated: 2022/04/06 20:26:33 by oipadeol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,12 @@ $(LIBFT):
 $(NAME): $(OBJ)
 	@echo "$(YELLOW)\n      -> Building $(NAME) ...$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "$(BLUE)......linking updated .o"
+	@echo "$(GREEN)***   Project $(NAME) successfully compiled   ***\n$(RESET)"
+
+no: $(OBJ) $(INC_DIR)/*.h
+	@echo "$(YELLOW)\n      -> Building $(NAME) ...$(RESET)"
+	@$(CC) $(OBJ) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "$(BLUE)......linking updated .o"
 	@echo "$(GREEN)***   Project $(NAME) successfully compiled   ***\n$(RESET)"
 

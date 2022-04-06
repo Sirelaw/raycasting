@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_handling_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttokesi <ttokesi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:51:48 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 17:41:46 by ttokesi          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:48:08 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	check_other_line(char *str, char *up, char *down, t_vars *vars)
 				if (vars->start_orientation)
 					ft_error();
 				vars->start_orientation = str[i];
-				vars->player[0] = i;
+				vars->player_x = i;
 			}
 		}
 		else if (str[i] != '1' && str[i] != ' ')
@@ -97,7 +97,7 @@ int	check_valid(char **input, t_vars *vars)
 		else
 		{
 			if (!vars->start_orientation)
-				vars->player[1] = i;
+				vars->player_y = i;
 			check_other_line(input[i], input[i - 1], input[i + 1], vars);
 		}
 		i++;

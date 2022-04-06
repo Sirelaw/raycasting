@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_game_maker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttokesi <ttokesi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:54:13 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/06 17:24:06 by ttokesi          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:53:20 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ static void	set_startvalues(t_vars *game, int lines, int rows)
 	game->enemy = 0;
 	game->count = 0;
 	game->sizer = 6; // size of small map
-	game->fi_x = 6;
-	game->fi_y = 6;
 	game->wi_x = rows;
 	game->he_y = lines;
 	game->collect = 0;
@@ -50,8 +48,8 @@ void	game_starter(t_vars *game, int lines, int rows)
 {
 
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, rows * 65, lines * 65,
-			"42 Surviver Game");
+	game->win = mlx_new_window(game->mlx, 20 * 65, 15 * 65,
+			"42 cube3D");
 	mlx_hook(game->win, 2, 1L << 2, close1, game);
 	mlx_hook(game->win, 17, 1L << 17, close12, game);
 	img_handler(game);

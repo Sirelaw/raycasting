@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_mytimer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttokesi <ttokesi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:48:49 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/06 13:49:11 by ttokesi          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:45:57 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	st_p(t_vars *g, int x, int y)
 {
 	if ((g->map)[y / g->sizer][x / g->sizer] == '1' ||
-		(g->map)[y / g->sizer][x / g->sizer] == 'C' || (g->map)[y / g->sizer][x / g->sizer] == 'E')
+		(g->map)[y / g->sizer][x / g->sizer] == 'C' /* || (g->map)[y / g->sizer][x / g->sizer] == 'E' */)
 		return (0);
 	return (1);
 }
@@ -62,12 +62,12 @@ static void	flipper(t_vars *g, int *step, int x, int y)
 	else
 		step[0] = 0;
 	sign = rand() % 2;
-	if (g->fi_x < x && sign == 0)
+	if (g->player_x < x && sign == 0)
 	{
 		step[0] = -g->sizer;
 		step[1] = 0;
 	}
-	if (g->fi_y < y && sign == 1)
+	if (g->player_y < y && sign == 1)
 	{
 		step[1] = -g->sizer;
 		step[0] = 0;
@@ -100,8 +100,8 @@ int	my_timer(t_vars *g)
 	f = 0;
 	if ((g->enemy) % 2000 == 0 && g->bh_x != -1 && g->bh_y != -1)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->im[4].l, g->fi_x, g->fi_y);
-		mlx_put_image_to_window(g->mlx, g->win, g->im[f].l, g->fi_x, g->fi_y);
+		mlx_put_image_to_window(g->mlx, g->win, g->im[4].l, g->player_x, g->player_y);
+		mlx_put_image_to_window(g->mlx, g->win, g->im[f].l, g->player_x, g->player_y);
 		f = f + 5;
 		mlx_put_image_to_window(g->mlx, g->win, g->im[f].l, g->bh_x, g->bh_y);
 		mlx_put_image_to_window(g->mlx, g->win, g->im[f].l, g->b2_x, g->b2_y);
