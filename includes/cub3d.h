@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 20:46:43 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 21:58:33 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct s_vars
 	int		map_size[2];
 	int		collect;
 	int		check;
+	int		fi_x;
+	int		fi_y;
 	int		player_x;
 	int		player_y;
 	int		bh_x;

@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:52:25 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/06 21:09:40 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/06 21:28:35 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 static void	side_two(t_vars *g, char *temp2, int i, int j)
 {
-	if (*temp2 == 'E' && g->check == 0)
+	if ((*temp2 == 'N' || *temp2 == 'S' || *temp2 == 'E' || *temp2 == 'W') && g->check == 0)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->im[FIG1].l, g->player_x, g->player_y);
-		// g->player_x = j * g->sizer;
-		// g->player_y = i * g->sizer;
+		mlx_put_image_to_window(g->mlx, g->win, g->im[FIG1].l, j * g->sizer, i * g->sizer);
+		g->map[i][j] = 0;
+		g->fi_x = j * g->sizer;
+		g->fi_y = i * g->sizer;
 		g->check = 1;
 	}
 	else if (*temp2 == 'P' && g->check == 1)
