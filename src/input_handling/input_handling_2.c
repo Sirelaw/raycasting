@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:51:48 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/06 20:48:08 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/09 02:21:08 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_error(void)
 {
 	write(STDERR_FILENO, "Error\n", 6);
-	// exit(1);
+	exit(1);
 }
 
 void	check_first_and_last_line(char *str)
@@ -72,7 +72,7 @@ void	check_other_line(char *str, char *up, char *down, t_vars *vars)
 				if (vars->start_orientation)
 					ft_error();
 				vars->start_orientation = str[i];
-				vars->player_x = i;
+				vars->player[0] = i;
 			}
 		}
 		else if (str[i] != '1' && str[i] != ' ')
@@ -97,7 +97,7 @@ int	check_valid(char **input, t_vars *vars)
 		else
 		{
 			if (!vars->start_orientation)
-				vars->player_y = i;
+				vars->player[1] = i;
 			check_other_line(input[i], input[i - 1], input[i + 1], vars);
 		}
 		i++;
