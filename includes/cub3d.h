@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/10 15:59:45 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/14 20:14:33 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include "../libft/libft.h"
 # include "get_line.h"
 # include "ray_cast.h"
+
+# define STEP 10
 
 enum e_images
 {
@@ -60,8 +62,8 @@ typedef struct s_vars
 	void	*mlx;
 	void	*win;
 	int		count;
-	int		map_w;
-	int		map_l;
+	int		win_w;
+	int		win_h;
 	char	**map;
 	void	*img;
 	char	start_orientation;
@@ -75,25 +77,41 @@ typedef struct s_vars
 	float	player_d[2];
 	int		origin[2];
 	char	**input;
+	int		map_width;
+	int		map_height;
 	int		images[8];
 	int 	sizer;
 	int		tile_size;
 }				t_vars;
 
 void	img_handler(t_vars *vars);
+
+// ------- mlx  ----------
+void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color);
 int		key_hook(int keycode, t_vars *vars);
-
-
+int		mouse_hook(int mousecode, int x, int y, t_vars *vars);
+int		clean_destroy(t_vars *vars);
 
 // ------- input ---------
 void	input_rows_init_player(int argc, char **argv, t_vars *vars);
 int		check_valid(char **input, t_vars *vars);
+void	standardize_input(char **str_ptr, int *max_len);
 void	ft_error(void);
 
 // ------ ray --------
 
 void	plotline(int x0_y0[2], int x1_y1[2], t_vars *vars, int color);
+void	plot_line_angle(int start[2], float theta, float dist, t_vars *vars);
 void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color);
 void	draw_field(t_vars *vars);
+void	draw_rays(t_vars *vars, float theta);
+void	cast_rays(t_vars *vars);
+
+
+// -------- dev -------
+
+#include "../includes/cub3d.h"
+
+void	print_str_arr(char **input);
 
 #endif

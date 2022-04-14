@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:53:35 by ttokesi           #+#    #+#             */
-/*   Updated: 2022/04/10 16:43:16 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:48:54 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	load_img(t_vars *vars)
 	int	i;
 
 	i = 0;
-	while (i < IMAGE_COUNT - 1)
+	while (i < IMAGE_COUNT)
 	{
 		vars->im[i].l = mlx_xpm_file_to_image(vars->mlx,
 					vars->im[i].path, &w, &h);

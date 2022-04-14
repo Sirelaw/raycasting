@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 06:25:49 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/10 11:07:50 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/14 17:00:50 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static void	init_orient(double	*orient, char start_orientation)
 {
 	if (start_orientation == 'E')
 		*orient = 0;
-	else if (start_orientation == 'N')
+	else if (start_orientation == 'S')
 		*orient = M_PI_2;
 	else if (start_orientation == 'W')
 		*orient = M_PI;
-	else if (start_orientation == 'S')
+	else if (start_orientation == 'N')
 		*orient = 3 * M_PI_2;
 }
 
@@ -98,6 +98,7 @@ void	input_rows_init_player(int argc, char **argv, t_vars *vars)
 	init_orient(&vars->orient, vars->start_orientation);
 	vars->player_f[0] = vars->player[0];
 	vars->player_f[1] = vars->player[1];
-	vars->player_d[0] = cos(vars->orient) * 5;
-	vars->player_d[1] = sin(vars->orient) * 5;
+	vars->player_d[0] = cos(vars->orient);
+	vars->player_d[1] = sin(vars->orient);
+	standardize_input(vars->input, &(vars->map_width));	
 }

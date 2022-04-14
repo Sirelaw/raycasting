@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   plotLine.c                                         :+:      :+:    :+:   */
+/*   plotline.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:39:00 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/09 18:33:53 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/11 15:21:08 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ void	plotline(int point1[2], int point2[2], t_vars *vars, int color)
 	int	x0_y0[2];
 	int	x1_y1[2];
 
-	x0_y0[0] = (point1[0] * vars->sizer) + vars->origin[0];
-	x0_y0[1] = (point1[1] * vars->sizer) + vars->origin[1];
-	x1_y1[0] = (point2[0] * vars->sizer) + vars->origin[0];
-	x1_y1[1] = (point2[1] * vars->sizer) + vars->origin[1];
+	x0_y0[0] = point1[0] + vars->origin[0];
+	x0_y0[1] = point1[1] + vars->origin[1];
+	x1_y1[0] = point2[0] + vars->origin[0];
+	x1_y1[1] = point2[1] + vars->origin[1];
 	if (ft_absolute(x1_y1[1] - x0_y0[1]) < ft_absolute(x1_y1[0] - x0_y0[0]))
 	{
 		if (x0_y0[0] > x1_y1[0])
