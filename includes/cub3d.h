@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:02:23 by oipadeol          #+#    #+#             */
-/*   Updated: 2022/04/14 20:14:33 by oipadeol         ###   ########.fr       */
+/*   Updated: 2022/04/15 02:12:20 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,23 @@ typedef struct s_img
 	char			*path;
 	enum e_images	name;
 }	t_img;
+
+typedef struct s_ray
+{
+	int 	mx;
+	int		my;
+	int		dof;
+	float	rx;
+	float	ry;
+	float	xo;
+	float	yo;
+	float	aTan;
+	float	nTan;
+	int		point_h[2];
+	int		point_v[2];
+	float	dist[2];
+}	t_ray;
+
 
 typedef struct s_vars
 {
@@ -109,8 +126,6 @@ void	cast_rays(t_vars *vars);
 
 
 // -------- dev -------
-
-#include "../includes/cub3d.h"
 
 void	print_str_arr(char **input);
 

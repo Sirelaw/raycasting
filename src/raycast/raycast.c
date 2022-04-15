@@ -33,17 +33,16 @@ static void	cast_ray(t_vars *vars, float theta)
 void	cast_rays(t_vars *vars)
 {
 	int		i;
-	int		ray_len;
 	float	dtheta;
 	float	theta;
 
 	i = 0;
 	theta = vars->orient - M_PI / 6;
-	dtheta = (M_PI / 3.0) / 600;
+	dtheta = (M_PI / 3.0) / 1200;
 	vars->img = mlx_new_image(vars->mlx, vars->win_w, vars->win_h);
 	vars->addr = mlx_get_data_addr(vars->img, &vars->bits_per_pixel,
 			&vars->line_lenght, &vars->endian);
-	while (i++ < 600)
+	while (i++ < 1200)
 	{
 		theta += dtheta;
 		if (theta > 2 * M_PI)
